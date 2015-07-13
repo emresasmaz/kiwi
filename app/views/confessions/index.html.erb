@@ -1,0 +1,12 @@
+<% @confessions.each do |confession| %>
+	<div class="confession">
+		<dl>
+		  <dt>Title:</dt>
+		  <dd><%= confession.title %></dd>
+		  <dt>Content:</dt>
+		  <dd><%= confession.content %></dd>
+		  <dt>Username:</dt>
+		  <dd><%= confession.user.username %></dd>
+		</dl>
+    </div>
+<% end %>
