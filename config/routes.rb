@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   # root 'welcome#index'
   get '/home' => 'confessions#index'
   get '/confessions/new' => 'confessions#new'
+  post '/confessions' => 'confessions#create'
+  get '/confessions/:id' => 'confessions#show' #, 'as' => :confession
   
 
   # Example of regular route:
