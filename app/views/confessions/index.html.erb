@@ -8,6 +8,9 @@
 		  <dd><%= confession.content %></dd>
 		  <dt>Username:</dt>
 		  <dd><%= confession.user.username %></dd>
+		  <%= link_to 'Show', confession_path(confession) %>
+		  <%= link_to 'Delete', home_path(confession), method: :delete,
+              data: { confirm: 'Are you sure?' } %>
 		</dl>
     </div>
 <% end %>
