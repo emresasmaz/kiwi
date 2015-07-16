@@ -1,0 +1,31 @@
+<%= form_for @confession do |f| %>
+ 
+  <% if @confession.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@confession.errors.count, "error") %> prohibited
+        this confession from being saved:
+      </h2>
+      <ul>
+        <% @confession.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+ 
+   <p>
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </p>
+ 
+  <p>
+    <%= f.label :content %><br>
+    <%= f.text_area :content %>
+  </p>
+ 
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
+
