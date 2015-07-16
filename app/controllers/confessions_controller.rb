@@ -26,7 +26,7 @@ class ConfessionsController < ApplicationController
     @confession = Confession.find(params[:id])
     @confession.destroy
  
-    redirect_to home_path
+    redirect_to delete_confession_path
   end
   private
   def confession_params
