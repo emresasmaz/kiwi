@@ -7,6 +7,10 @@ class ConfessionsController < ApplicationController
    @confession = Confession.new
   end
   
+  def edit
+  @confession = Confession.find(params[:id])
+  end
+  
   def create
     @confession = Confession.new(confession_params)
     @confession.user_id = User.first.id
@@ -17,6 +21,16 @@ class ConfessionsController < ApplicationController
       render 'new'
     end 
   end
+  
+  def update
+  @confession = Confession.find(params[:id])
+ 
+  if @confession.update(confession_params)
+    redirect_to @confession
+  else
+    render 'edit'
+  end
+end
   
   def show
     @confession = Confession.find(params[:id])
