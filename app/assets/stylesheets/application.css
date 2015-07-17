@@ -30,7 +30,7 @@ body > .container {
 }
 
 .header{
-	background-color: #E6E6FA;
+	background: #fff;
     width: 100%;
     top: 0;
     position: fixed;
@@ -44,10 +44,18 @@ body > .container {
 
 a{
 	text-decoration: none;
+	
 }
 
 li{
 	list-style: none;
+	float: left;
+	margin-left: 60px;
+	padding-top: 20px;
+}
+
+.nav{
+	float: right;
 }
 
 
