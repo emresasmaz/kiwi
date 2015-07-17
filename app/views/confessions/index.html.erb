@@ -1,4 +1,3 @@
-<%= link_to 'Create confession', confessions_new_path %><hr></hr>
 <% @confessions.each do |confession| %>
 	<div class="confession">
 		<dl>
@@ -9,9 +8,7 @@
 		  <dt>Username:</dt>
 		  <dd><%= confession.user.username %></dd>
 		  <%= link_to 'Show', confession_path(confession) %>
-		  <%= link_to 'Delete', delete_confession_path(confession), method: :delete,
-              data: { confirm: 'Are you sure?' } %>
-         
+
 		</dl>
     </div>
 <% end %>

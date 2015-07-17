@@ -1,0 +1,33 @@
+.navbar {
+    background: #fff;
+    width: 100%;
+    top: 0;
+    position: fixed;
+    
+    .logo {
+      float: left;
+      font-family: "Helvetica";
+      font-size: 15px;
+    }
+    
+    a {
+      text-decoration: none;  
+    }
+    
+    li {
+      list-style: none;
+      float: left;
+      margin-left: 60px;
+      padding-top: 25px;
+      font-size: 20px;
+    }
+    
+    .nav {
+      float: right;
+    }
+    
+    h1 {
+        font-size: 40px;
+    }
+}
+
