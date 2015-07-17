@@ -40,7 +40,7 @@ end
     @confession = Confession.find(params[:id])
     @confession.destroy
  
-    redirect_to home_path
+    redirect_to root_path
   end
   private
   def confession_params
