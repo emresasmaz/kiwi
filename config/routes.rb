@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   get '/confessions/new' => 'confessions#new'
   post '/confessions' => 'confessions#create'
   get '/confessions/:id', to: 'confessions#show', as: 'confession'
-  delete '/confession/:id' , to: 'confessions#destroy' , as: 'delete_confession'
+  delete '/confessions/:id' , to: 'confessions#destroy' , as: 'delete_confession'
   
 
   # Example of regular route:
