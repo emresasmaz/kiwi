@@ -10,11 +10,10 @@
 		 	     <li>
 		 	     	<%= link_to 'New Confession' , confessions_new_path%>
 		 	     </li>
-		         <li>
-		 	     	<%= link_to 'My Confessions' , root_path(user_id: current_user.id) %>
-		         </li>
 		         
 		         <% if signed_in? %>
+		         	 <li><%= link_to 'My Confessions' , root_path(user_id: current_user.id) %></li>
+
 			         <li>
 			         	<%= link_to sign_out_path, method: :delete do %>
 			         		Sign out
