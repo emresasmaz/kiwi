@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
   
   def authenticate_user
     unless signed_in?
-      redirect_to sign_in_path
+      redirect_to signup_path
     end
   end
   

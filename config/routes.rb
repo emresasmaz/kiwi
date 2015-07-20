@@ -10,14 +10,12 @@ Rails.application.routes.draw do
   delete '/confessions/:id' , to: 'confessions#destroy' , as: 'delete_confession'
   get '/confessions/:id/edit', to: 'confessions#edit' , as: 'edit_confession'
   patch '/confessions/:id' , to: 'confessions#update'
+  
   get '/signup' => 'users#new'
   post '/signup' => 'users#create'
-  
-  get '/sessions/new', to: 'sessions#new', as: 'sign_in'
   post '/sessions' => 'sessions#create'
   delete '/sessions', to: 'sessions#destroy', as: 'sign_out'
-
-
+    
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

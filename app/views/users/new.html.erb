@@ -1,7 +1,7 @@
 <hr></hr>
 
 <%= form_tag signup_path do %>
-  <% if @user.errors.any? %>
+  <% if @user && @user.errors.any? %>
     <div id="error_explanation">
       <h2>
         <%= pluralize(@user.errors.count, "error") %> prohibited
@@ -15,10 +15,9 @@
     </div>
   <% end %>
 
-
    <p>
     <%= label_tag :username %><br>
-    <%= text_field_tag :username %>
+    <%= text_field_tag(:username, params[:username]) %>
   </p>
  
   <p>
@@ -33,6 +32,30 @@
 
   <p>
     <%= submit_tag %>
+  </p>
+<% end %>
+
+<hr></hr>
+
+<% if flash[:alert] %>
+	<p>
+		<%= flash[:alert] %>
+	</p>
+<% end %>
+
+<%= form_tag sessions_path do %>
+   <p>
+    <%= label_tag :username %><br>
+    <%= text_field_tag :username, params[:username] %>
+  </p>
+ 
+  <p>
+    <%= label_tag :password %><br>
+    <%= password_field_tag :password %>
+  </p>
+  
+  <p>
+    <%= submit_tag 'Login' %>
   </p>
 <% end %>
 
