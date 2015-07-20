@@ -11,10 +11,21 @@
 		 	     	<%= link_to 'New Confession' , confessions_new_path%>
 		 	     </li>
 		         <li>
-		         	<a href="#">My Confessions</a>
+		 	     	<%= link_to 'My Confessions' , root_path(user_id: current_user.id) %>
 		         </li>
 		         
-		         <li><a href="#">Login</a></li>
+		         <% if signed_in? %>
+			         <li>
+			         	<%= link_to sign_out_path, method: :delete do %>
+			         		Sign out
+			         		<br/>
+			         		<%= current_user.username %>
+			         	<% end %>
+			         </li>
+		         <% else %>
+			         <li><%= link_to 'Sign In', sign_in_path %> </li>
+			         <li><%= link_to 'Sign Up', signup_path %> </li>
+			     <% end %>
 	          </ul>
            </div>
     </div>

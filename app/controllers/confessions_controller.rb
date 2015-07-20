@@ -1,50 +1,64 @@
 class ConfessionsController < ApplicationController
+  before_action :set_confession, only: [:edit, :update, :destroy, :show]
+  before_action :can_update_or_delete, only: [:edit, :update, :destroy]
+  
   def index
-    @confessions = Confession.all
+    if params[:user_id]
+      @confessions = Confession.where(user_id: params[:user_id].to_i)
+    else
+      @confessions = Confession.all
+    end
   end
-  
+
   def new
-   @confession = Confession.new
+    @confession = Confession.new
   end
-  
+
   def edit
-  @confession = Confession.find(params[:id])
   end
-  
+
   def create
     @confession = Confession.new(confession_params)
-    @confession.user_id = User.first.id
+    @confession.user_id = current_user.id
 
     if @confession.save
       redirect_to confession_path(@confession.id)
     else
       render 'new'
-    end 
+    end
   end
-  
+
   def update
-  @confession = Confession.find(params[:id])
- 
-  if @confession.update(confession_params)
-    redirect_to @confession
-  else
-    render 'edit'
+    if @confession.update(confession_params)
+      redirect_to @confession
+    else
+      render 'edit'
+    end
   end
-end
-  
+
   def show
-    @confession = Confession.find(params[:id])
   end
-  
+
   def destroy
-    @confession = Confession.find(params[:id])
     @confession.destroy
- 
+
     redirect_to root_path
   end
+
   private
+
   def confession_params
     params.require(:confession).permit(:title, :content)
   end
   
+  def set_confession
+    @confession = Confession.find(params[:id])
+  end
+
+  def can_update_or_delete
+    if @confession.user_id != current_user.id
+      redirect_to confession_path(@confession.id)
+    end
+  end
+
 end

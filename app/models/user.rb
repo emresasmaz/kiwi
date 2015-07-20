@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
   has_many :confessions
-  validates :username, length: { minimum: 5, maximum: 25 }
-  validates :password, length: { minimum: 6, maximum: 25 }
+  validates :username, length: { minimum: 5, maximum: 25 }, uniqueness: true
+  validates :password, length: { minimum: 6, maximum: 25 }, confirmation: true
 end

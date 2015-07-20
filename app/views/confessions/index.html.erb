@@ -6,7 +6,7 @@
 		  <dt>Content:</dt>
 		  <dd><%= confession.content %></dd>
 		  <dt>Username:</dt>
-		  <dd><%= confession.user.username %></dd>
+		  <dd><%= link_to confession.user.username, root_path(user_id: confession.user.id) %></dd>
 		  <%= link_to 'Show', confession_path(confession) %>
 
 		</dl>

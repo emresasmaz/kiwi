@@ -1,19 +1,19 @@
 class UsersController < ApplicationController
-   def index
-    @users = User.all
-  end
-   
-   def new
-   @user = User.new
-  end
+  skip_before_action :authenticate_user
   
+  def new
+    @user = User.new
+  end
+
   def create
-    #params[:username] params[:password] 
-    @user = User.new(username: params[:username] , password: params[:password])
+    @user = User.new(username: params[:username],
+                     password: params[:password],
+                     password_confirmation: params[:password_confirmation])
     if @user.save
+      sign_in(@user)
       redirect_to root_path
     else
       render 'new'
-    end 
+    end
   end
 end

@@ -1,3 +1,39 @@
 <hr></hr>
 
-<%= render 'form' %>
+<%= form_tag signup_path do %>
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@user.errors.count, "error") %> prohibited
+        this user from being saved:
+      </h2>
+      <ul>
+        <% @user.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+   <p>
+    <%= label_tag :username %><br>
+    <%= text_field_tag :username %>
+  </p>
+ 
+  <p>
+    <%= label_tag :password %><br>
+    <%= password_field_tag :password %>
+  </p>
+  
+  <p>
+    <%= label_tag :password_confirmation %><br />
+    <%= password_field_tag :password_confirmation %>
+  </p>
+
+  <p>
+    <%= submit_tag %>
+  </p>
+<% end %>
+
+
