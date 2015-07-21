@@ -15,24 +15,25 @@
     </div>
   <% end %>
 
-   <p>
+   <p><strong>
     <%= label_tag :username %><br>
     <%= text_field_tag(:username, params[:username]) %>
-  </p>
+  </p></strong>
  
-  <p>
+  <p><strong>
     <%= label_tag :password %><br>
     <%= password_field_tag :password %>
-  </p>
+  </p></strong>
   
-  <p>
+  <p><strong>
     <%= label_tag :password_confirmation %><br />
     <%= password_field_tag :password_confirmation %>
-  </p>
+  </p></strong>
 
-  <p>
-    <%= submit_tag %>
-  </p>
+  <p><strong>
+    <%= submit_tag 'Sign Up'%><br>
+    <p>Sign up for contents</p>
+  </p></strong>
 <% end %>
 
 <hr></hr>
@@ -44,17 +45,17 @@
 <% end %>
 
 <%= form_tag sessions_path do %>
-   <p>
+   <p><strong>
     <%= label_tag :username %><br>
     <%= text_field_tag :username, params[:username] %>
-  </p>
+  </p></strong>
  
-  <p>
+  <p><strong>
     <%= label_tag :password %><br>
     <%= password_field_tag :password %>
-  </p>
+  </p></strong>
   
-  <p>
+  <p><strong>
     <%= submit_tag 'Login' %>
-  </p>
+  </p></strong>
 <% end %>
