@@ -1,3 +1,19 @@
-body.controller--users.action--new {
-   background: linear-gradient(white, green);
+body.controller--users.action--new, 
+body.controller--users.action--create, 
+body.controller--sessions.action--create {
+     background-image: url("http://fc03.deviantart.net/fs39/f/2008/358/6/a/Danbo_Wallpaper_by_SaiogaMan.jpg");
+   
+  .all {
+    margin-left: 40%;
+    margin-right:180%;  
+  }
+  
+  .log {
+    margin-left: 40%;
+    margin-right:180%; 
+  }
+  
+  #error_explanation{
+   height: 100px;  
+  }
 }
