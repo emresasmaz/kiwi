@@ -1,6 +1,32 @@
-<hr>
-</hr>
+<div class="log">
+	
+<% if flash[:alert] %>
+<p>
+	<%= flash[:alert] %>
+</p>
+<% end %>
 
+	<%= form_tag sessions_path do %>
+	<p>
+		<strong> <%= label_tag :username %>
+		<br>
+		<%= text_field_tag :username, params[:username] %>
+	</p></strong>
+
+	<p>
+		<strong> <%= label_tag :password %>
+		<br>
+		<%= password_field_tag :password %>
+	</p></strong>
+
+	<p>
+		<strong> <%= submit_tag 'Login' %>
+	</p></strong>
+	<% end %>
+</div>
+<br>
+<br>
+<br>
 <%= form_tag signup_path do %>
 <% if @user && @user.errors.any? %>
 <div id="error_explanation">
@@ -41,32 +67,5 @@
 	</p></strong>
 	<% end %>
 </div>
-<hr>
-</hr>
 
-<div class="log">
-	
-<% if flash[:alert] %>
-<p>
-	<%= flash[:alert] %>
-</p>
-<% end %>
 
-	<%= form_tag sessions_path do %>
-	<p>
-		<strong> <%= label_tag :username %>
-		<br>
-		<%= text_field_tag :username, params[:username] %>
-	</p></strong>
-
-	<p>
-		<strong> <%= label_tag :password %>
-		<br>
-		<%= password_field_tag :password %>
-	</p></strong>
-
-	<p>
-		<strong> <%= submit_tag 'Login' %>
-	</p></strong>
-	<% end %>
-</div>
