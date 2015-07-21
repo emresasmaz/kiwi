@@ -1,6 +1,8 @@
 <% @confessions.each do |confession| %>
-<div class="confession">
-    <dl>
+
+<div class="table">
+	<dl>
+		<strong>
 		<dt>
 			Title:
 		</dt>
@@ -14,12 +16,12 @@
 			<%= confession.content %>
 		</dd>
 		<dt>
-			Username:
+			Username:  <%= link_to confession.user.username, root_path(user_id: confession.user.id) %>
 		</dt>
-		<dd>
-			<%= link_to confession.user.username, root_path(user_id: confession.user.id) %>
-		</dd>
-		<%= link_to 'Show', confession_path(confession) %>
+		<p>
+            <%= link_to 'Show', confession_path(confession) %>
+		</p> </strong>
 	</dl>
 </div>
+
 <% end %>

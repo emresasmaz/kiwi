@@ -1,7 +1,42 @@
 body.controller--confessions.action--index {
-    background-image: url("http://fc03.deviantart.net/fs39/f/2008/358/6/a/Danbo_Wallpaper_by_SaiogaMan.jpg");
+    background-image: url("http://birthday-cards.net/images/img7/wallpapers-hd-free-ecard-2015-2.jpg");
+    dt{
+      font-size: 20px;
+      font-style: italic;
+      color: #000000;
+    }
+    
+    dd{
+        font-size: 20px;
+        font-style: italic;
+        color: white;
+    }
+    
+    .table{
   
-  .confession {
+    white-space: nowrap; 
+    width: 950px; 
+    height:200px;
+    top: 100px;
+    right: 50px;
+    margin-bottom: 50px;
+    border: 5px solid black;
+    box-shadow: 10px 10px 5px;
+    text-overflow: ellipsis;
+    }
    
-  }
+    p{
+      font-size: 20px;
+        font-style: italic;
+        font-color: white;
+    }
+}
+body.controller--confessions.action--new {
+  p {
+    font-size: 20px;
+}
+.back{
+  font-size: 20px;
+}
+
 }
