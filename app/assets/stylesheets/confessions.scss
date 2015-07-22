@@ -31,7 +31,9 @@ body.controller--confessions.action--index {
         font-color: white;
     }
 }
-body.controller--confessions.action--new ,body.controller--confessions.action--show {
+body.controller--confessions.action--new,
+body.controller--confessions.action--show,
+body.controller--confessions.action--edit {
   background-image: url("http://www.sohbetcanlar.com/wp-content/uploads/2015/03/essiz-manzara-1275236017.jpg");
   p {
     font-size: 20px;
