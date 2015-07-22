@@ -1,5 +1,5 @@
 body.controller--confessions.action--index {
-    background-image: url("http://birthday-cards.net/images/img7/wallpapers-hd-free-ecard-2015-2.jpg");
+    background-image: url("http://www.sohbetcanlar.com/wp-content/uploads/2015/03/essiz-manzara-1275236017.jpg");
     dt{
       font-size: 20px;
       font-style: italic;
@@ -24,14 +24,15 @@ body.controller--confessions.action--index {
     box-shadow: 10px 10px 5px;
     text-overflow: ellipsis;
     }
-   
+ 
     p{
       font-size: 20px;
         font-style: italic;
         font-color: white;
     }
 }
-body.controller--confessions.action--new {
+body.controller--confessions.action--new ,body.controller--confessions.action--show {
+  background-image: url("http://www.sohbetcanlar.com/wp-content/uploads/2015/03/essiz-manzara-1275236017.jpg");
   p {
     font-size: 20px;
 }

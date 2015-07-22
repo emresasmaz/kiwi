@@ -15,6 +15,8 @@ Rails.application.routes.draw do
   post '/signup' => 'users#create'
   post '/sessions' => 'sessions#create'
   delete '/sessions', to: 'sessions#destroy', as: 'sign_out'
+  
+  get '/comments/new' => 'comments#new'
     
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
