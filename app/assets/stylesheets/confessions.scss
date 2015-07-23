@@ -1,45 +1,72 @@
 body.controller--confessions.action--index {
-    background-image: url("http://www.sohbetcanlar.com/wp-content/uploads/2015/03/essiz-manzara-1275236017.jpg");
+background-image: url("http://www.sohbetcanlar.com/wp-content/uploads/2015/03/essiz-manzara-1275236017.jpg");
     dt{
       font-size: 20px;
-      font-style: italic;
+      float: right;
       color: #000000;
+      position: relative;
+      left: 44px;
     }
     
-    dd{
-        font-size: 20px;
+   dd{
+     width:-10px; margin:0 auto;
+   }
+   p{
+      font-size: 20px;
         font-style: italic;
-        color: white;
+        font-color: white;
+        float: right;    
+    }
+    
+    .underline {
+       
+       color: black;
+    }
+    .not-underline{
+      font-size: 15px;
+      color: black
     }
     
     .table{
-  
+    background: #E8E8E8;
     white-space: nowrap; 
     width: 950px; 
     height:200px;
     top: 100px;
     right: 50px;
     margin-bottom: 50px;
-    border: 5px solid black;
-    box-shadow: 10px 10px 5px;
+    border: 2px solid black;
+    box-shadow: 5px 5px 5px 5px;
     text-overflow: ellipsis;
     }
- 
-    p{
-      font-size: 20px;
-        font-style: italic;
-        font-color: white;
+    
+     .scroll {
+    width: 100%;
+    }
+    .right{
+    width: 250px; 
+    height:150px;
+    float: right; 
+    overflow: auto;
+    }
+    .left {
+    border: 1px solid #cacaca;
+    margin: 5px;
+    padding: 0px; 
+    background: #fffef2 none repeat scroll 0% 0%;
+    overflow: scroll;
+    height: 100px;
+    width: 700px;
     }
 }
 body.controller--confessions.action--new,
 body.controller--confessions.action--show,
 body.controller--confessions.action--edit {
-  background-image: url("http://www.sohbetcanlar.com/wp-content/uploads/2015/03/essiz-manzara-1275236017.jpg");
+background-image: url("http://www.sohbetcanlar.com/wp-content/uploads/2015/03/essiz-manzara-1275236017.jpg");
   p {
     font-size: 20px;
-}
-.back{
+  }
+  .back{
   font-size: 20px;
-}
-
+  }
 }

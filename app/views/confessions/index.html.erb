@@ -2,27 +2,32 @@
 
 <div class="table">
 
-	<dl>
-		<strong>
-		<dt>
-			Title:
-		</dt>
-		<dd>
-			<%= confession.title %>
-		</dd>
-		<dt>
-			Content:
-		</dt>
-		<dd>
-			<%= confession.content %>
-		</dd>
-		<dt>
-			Username:  <%= link_to confession.user.username, root_path(user_id: confession.user.id) %>
-		</dt>
-		<p>
-			<%= link_to 'Show', confession_path(confession) %>
-		</p> </strong>
-	</dl>
+	<div class="scroll">
+		<div class="left">
+			<dl>
+				<strong>
+				<dd>
+					<br>
+					<div class="underline">
+						Title: <%= confession.title %>
+					</div>
+				</dd>
+				<dd>
+					<div class="not-underline">
+						Content: <%= confession.content %>
+					</div>
+				</dd>
+		</div>
+		<div class="right">
+			<p>
+				<%= link_to 'Show', confession_path(confession) %>
+			</p> </strong>
+
+			<dt>
+				<%= link_to confession.user.username, root_path(user_id: confession.user.id) %>
+			</dt>
+		</div>
+	</div></dl>
 </div>
 
 <% end %>
