@@ -1,0 +1,5 @@
+<%= form_tag likes_path do %>
+ <% hidden_field_tag :user_id %>
+  <% hidden_field_tag :confession_id %>
+   <%= submit_tag 'Like'  %>
+<% end %>

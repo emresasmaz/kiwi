@@ -1,5 +1,5 @@
 body.controller--confessions.action--index {
-background-image: url("http://www.sohbetcanlar.com/wp-content/uploads/2015/03/essiz-manzara-1275236017.jpg");
+ background-image: url("http://www.sohbetcanlar.com/wp-content/uploads/2015/03/essiz-manzara-1275236017.jpg");
     dt{
       font-size: 20px;
       float: right;
@@ -49,7 +49,8 @@ background-image: url("http://www.sohbetcanlar.com/wp-content/uploads/2015/03/es
     float: right; 
     overflow: auto;
     }
-    .left {
+
+      .left {
     border: 1px solid #cacaca;
     margin: 5px;
     padding: 0px; 
@@ -58,6 +59,8 @@ background-image: url("http://www.sohbetcanlar.com/wp-content/uploads/2015/03/es
     height: 100px;
     width: 700px;
     }
+    
+
 }
 body.controller--confessions.action--new,
 body.controller--confessions.action--show,

@@ -16,7 +16,16 @@ Rails.application.routes.draw do
   post '/sessions' => 'sessions#create'
   delete '/sessions', to: 'sessions#destroy', as: 'sign_out'
   
-  get '/comments/new' => 'comments#new'
+  
+  
+  get '/likes/new' => 'likes#new'
+  post '/likes' => 'likes#create'
+  delete '/likes/id' => 'likes#destroy' 
+  
+  
+  resources :confessions do
+  resources :comments
+  end
     
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
