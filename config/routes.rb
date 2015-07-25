@@ -18,11 +18,11 @@ Rails.application.routes.draw do
   
  
   post '/likes' => 'likes#create'
-  delete '/likes/id' => 'likes#destroy' 
+  delete '/likes/:id' => 'likes#destroy', as: 'like'
   
   
-  resources :confessions do
-  resources :comments
+  resources :confessions, only: [] do
+    resources :comments
   end
     
   # Example of regular route:

@@ -24,7 +24,17 @@
 			<p>
 				<%= link_to 'Show', confession_path(confession) %>
 			</p> </strong>
-            <h3><%= render 'likes/like' %></h3>
+			<% like = Like.where(:user_id => current_user.id, :confession_id => confession.id).first %>
+			
+			<% unless like %>
+              <h3><%= render partial: 'likes/like', locals: {c: confession} %></h3>
+               <%else%>  
+              <h3><%= render partial: 'likes/unlike', locals: {like: like} %></h3>
+            <% end %>
+            
+            <%= confession.likes.count %> - 
+            <%= confession.users.last(10).map {|u| u.username}.join(', ') %>
+			
 			<dt>
 				<%= link_to confession.user.username, root_path(user_id: confession.user.id) %>
 			</dt>
