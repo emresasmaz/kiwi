@@ -43,23 +43,7 @@ body.controller--confessions.action--index {
      .scroll {
     width: 100%;
     }
-    .right{
-    width: 250px; 
-    height:150px;
-    float: right; 
-    overflow: auto;
-    }
-
-      .left {
-    border: 1px solid #cacaca;
-    margin: 5px;
-    padding: 0px; 
-    background: #fffef2 none repeat scroll 0% 0%;
-    overflow: scroll;
-    height: 100px;
-    width: 700px;
-    }
-    
+  
 
 }
 body.controller--confessions.action--new,

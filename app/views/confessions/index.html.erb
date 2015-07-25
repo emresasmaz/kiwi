@@ -17,13 +17,14 @@
 					<div class="not-underline">
 						Content: <%= confession.content %>
 					</div>
-				</dd>
+				</dd>	
+				
 		</div>
 		<div class="right">
 			<p>
 				<%= link_to 'Show', confession_path(confession) %>
 			</p> </strong>
-
+            <h3><%= render 'likes/like' %></h3>
 			<dt>
 				<%= link_to confession.user.username, root_path(user_id: confession.user.id) %>
 			</dt>
