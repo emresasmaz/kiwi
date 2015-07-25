@@ -1,10 +1,10 @@
 <div class="log">
-	
-<% if flash[:alert] %>
-<p>
-	<%= flash[:alert] %>
-</p>
-<% end %>
+
+	<% if flash[:alert] %>
+	<p>
+		<%= flash[:alert] %>
+	</p>
+	<% end %>
 
 	<%= form_tag sessions_path do %>
 	<p>
@@ -18,10 +18,9 @@
 		<br>
 		<%= password_field_tag :password %>
 	</p></strong>
-
-	<p>
-		<strong> <%= submit_tag 'Login' %>
-	</p></strong>
+		<p>
+			<strong> <%= submit_tag 'Login' %>
+		</p></strong>
 	<% end %>
 </div>
 <br>
@@ -67,5 +66,4 @@
 	</p></strong>
 	<% end %>
 </div>
-
 
