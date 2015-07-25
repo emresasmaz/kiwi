@@ -16,9 +16,7 @@ Rails.application.routes.draw do
   post '/sessions' => 'sessions#create'
   delete '/sessions', to: 'sessions#destroy', as: 'sign_out'
   
-  
-  
-  get '/likes/new' => 'likes#new'
+ 
   post '/likes' => 'likes#create'
   delete '/likes/id' => 'likes#destroy' 
   
