@@ -1,21 +1,14 @@
 body.controller--users.action--new, 
 body.controller--users.action--create, 
 body.controller--sessions.action--create {
-    
-      background-image: url("http://www.wallpapersdesign.net/wp-content/uploads/2012/12/Grand-Canyon.jpg");
-      color: white;
-      font-size: 120%;
-  .all {
-    margin-left: 74%;
-    margin-right:180%; 
-  }
+  background-image: url("http://www.wallpapersdesign.net/wp-content/uploads/2012/12/Grand-Canyon.jpg");
+  color: white;
+  font-size: 120%;
   
-  .log {
-    margin-left: 74%;
-    margin-right:180%; 
+  .login {
+    margin-top: 65px;
   }
-
-  #error_explanation{
-   height: 100px;  
+  .signup {
+    margin-top: 65px;
   }
 }

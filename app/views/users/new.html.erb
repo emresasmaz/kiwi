@@ -1,69 +1,80 @@
-<div class="log">
-
-	<% if flash[:alert] %>
-	<p>
-		<%= flash[:alert] %>
-	</p>
-	<% end %>
-
-	<%= form_tag sessions_path do %>
-	<p>
-		<strong> <%= label_tag :username %>
-		<br>
-		<%= text_field_tag :username, params[:username] %>
-	</p></strong>
-
-	<p>
-		<strong> <%= label_tag :password %>
-		<br>
-		<%= password_field_tag :password %>
-	</p></strong>
+<div class="row">
+	<div class='col-sm-4 col-sm-offset-7 login'>
+		<% if flash[:alert] %>
 		<p>
-			<strong> <%= submit_tag 'Login' %>
-		</p></strong>
-	<% end %>
-</div>
-<br>
-<br>
-<br>
-<%= form_tag signup_path do %>
-<% if @user && @user.errors.any? %>
-<div id="error_explanation">
-	<h2> <%= pluralize(@user.errors.count, "error") %> prohibited
-	this user from being saved: </h2>
-	<ul>
-		<% @user.errors.full_messages.each do |msg| %>
-		<li>
-			<%= msg %>
-		</li>
+			<%= flash[:alert] %>
+		</p>
 		<% end %>
-	</ul>
-</div>
-<% end %>
-<div class="all">
 
-	<p>
-		<strong> <%= label_tag :username %>
-		<br>
-		<%= text_field_tag(:username, params[:username]) %>
-	</p></strong>
+		<%= form_tag(sessions_path, {class: "form-horizontal"}) do %>
+		<div class="form-group">
+			<label for="username" class="col-xs-3 control-label">Username</label>
+			<div class="col-xs-9">
+				<%= text_field_tag :username, params[:username], {class: "form-control"} %>
+			</div>
+		</div>
 
-	<p>
-		<strong> <%= label_tag :password %>
-		<br>
-		<%= password_field_tag :password %>
-	</p></strong>
+		<div class="form-group">
+			<label for="password" class="col-xs-3 control-label">Password</label>
+			<div class="col-xs-9">
+				<%= password_field_tag :password, nil, {class: "form-control"} %>
+			</div>
+		</div>
 
-	<p>
-		<strong> <%= label_tag :password_confirmation %>
-		<br />
-		<%= password_field_tag :password_confirmation %>
-	</p></strong>
+		<div class="form-group">
+			<div class="col-xs-offset-3 col-xs-9">
+				<%= submit_tag 'Login', {class: "btn btn-primary col-xs-12"} %>
+			</div>
+		</div>
 
-	<p>
-		<strong> <%= submit_tag 'Sign Up'%>
-		<br>
-	</p></strong>
-	<% end %>
+		<% end %>
+	</div>
 </div>
 
+<div class="row">
+	<div class='col-sm-4 col-sm-offset-7 signup'>
+
+		<%= form_tag signup_path, {class: "form-horizontal"} do %>
+			<% if @user && @user.errors.any? %>
+				<div id="error_explanation">
+					<h2> <%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved: </h2>
+					<ul>
+						<% @user.errors.full_messages.each do |msg| %>
+						<li>
+							<%= msg %>
+						</li>
+						<% end %>
+					</ul>
+				</div>
+			<% end %>
+	
+			<div class="form-group">
+				<label for="username" class="col-xs-3 control-label">Username</label>
+				<div class="col-xs-9">
+					<%= text_field_tag(:username, params[:username], {class: "form-control"}) %>
+				</div>
+			</div>
+	
+			<div class="form-group">
+				<label for="password" class="col-xs-3 control-label">Password</label>
+				<div class="col-xs-9">
+					<%= password_field_tag :password, nil, {class: "form-control"} %>
+				</div>
+			</div>
+	
+			<div class="form-group">
+				<label for="password confirmation" class="col-xs-3 control-label">Password Confirmation</label>
+				<div class="col-xs-9">
+					<%= password_field_tag :password_confirmation, nil, {class: "form-control"} %>
+				</div>
+			</div>
+	
+			<div class="form-group">
+				<div class="col-xs-offset-3 col-xs-9">
+					<%= submit_tag 'Sign Up', {class: "btn btn-primary col-xs-12"} %>
+				</div>
+			</div>
+
+		<% end %>
+	</div>
+</div>
