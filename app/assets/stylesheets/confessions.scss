@@ -1,59 +1,19 @@
 body.controller--confessions.action--index {
  background-image: url("http://www.sohbetcanlar.com/wp-content/uploads/2015/03/essiz-manzara-1275236017.jpg");
-    dt{
-      font-size: 20px;
-      float: right;
-      color: #000000;
-      position: relative;
-      left: 44px;
-    }
-    
-   dd{
-     width:-10px; margin:0 auto;
-   }
-   p{
-        font-size: 20px;
-        font-style: italic;
-        font-color: white;
-        float: right;    
-    }
-    
-    .underline {
-       
-       color: black;
-    }
-    .not-underline{
-      font-size: 15px;
-      color: black
-    }
-    
-    .table{
-    background: #E8E8E8;
-    white-space: nowrap; 
-    width: 950px; 
-    height:200px;
-    top: 100px;
-    right: 50px;
-    margin-bottom: 50px;
-    border: 2px solid black;
-    box-shadow: 5px 5px 5px 5px;
-    text-overflow: ellipsis;
-    }
-    
-     .scroll {
-    width: 100%;
-    }
-  
+ 
 
-}
+  }
 body.controller--confessions.action--new,
 body.controller--confessions.action--show,
-body.controller--confessions.action--edit {
-background-image: url("http://www.sohbetcanlar.com/wp-content/uploads/2015/03/essiz-manzara-1275236017.jpg");
-  p {
-    font-size: 20px;
-  }
-  .back{
-  font-size: 20px;
-  }
+body.controller--confessions.action--edit,
+body.controller--confessions.action--create,
+body.controller--confessions.action--update {
+background-image: url("http://hdw.datawallpaper.com/architecture/golden-gate-bridge-from-a-wharf-hdr-wide-wallpaper-500732.jpg");
+    .confessionform{
+       margin-top: 180px; 
+    }
+    .form-group{
+      font-size: 20px;
+      color: blue;
+    }
 }

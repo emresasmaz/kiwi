@@ -1,45 +1,26 @@
 <% @confessions.each do |confession| %>
-
-<div class="table">
-
-	<div class="scroll">
-		<div class="left">
-			
-			<dl>
-				<strong>
-				<dd>
-					<br>
-					<div class="underline">
-						Title: <%= confession.title %>
-					</div>
-				</dd>
-				<dd>
-					<div class="not-underline">
-						Content: <%= confession.content %>
-					</div>
-				</dd>	
-				
-		</div>
-		<div class="right">
-			<p>
-				<%= link_to 'Show', confession_path(confession) %>
-			</p> </strong>
-			<% like = Like.where(:user_id => current_user.id, :confession_id => confession.id).first %>
-			
-			<% unless like %>
-              <h3><%= render partial: 'likes/like', locals: {c: confession} %></h3>
-               <%else%>  
-              <h3><%= render partial: 'likes/unlike', locals: {like: like} %></h3>
-            <% end %>
-            
-            <%= confession.likes.count %> - 
-            <%= confession.users.last(10).map {|u| u.username}.join(', ') %>
-			
-			<dt>
-				<%= link_to confession.user.username, root_path(user_id: confession.user.id) %>
-			</dt>
-		</div>
-	</div></dl>
-</div>
-
-<% end %>
+	
+	<dl class="dl-horizontal">
+		<dd>
+			Title: <%= confession.title %>
+		</dd>
+		<dd>
+			Content: <%= confession.content %>
+		</dd>
+	</dl>
+	<p><strong> <%= link_to 'Show', confession_path(confession) %></p> </strong>
+	
+	<% like = Like.where(:user_id => current_user.id, :confession_id => confession.id).first %>
+	
+	<% unless like %>
+	<h3><%= render partial: 'likes/like', locals: {c: confession} %></h3>
+	<%else%>
+	<h3><%= render partial: 'likes/unlike', locals: {like: like} %></h3>
+	<% end %>
+	
+	<%= confession.likes.count %> -
+	<%= confession.users.last(10).map {|u| u.username}.join(', ') %>
+	<dt>
+		<%= link_to confession.user.username, root_path(user_id: confession.user.id) %>
+	</dt>
+	<% end %>
