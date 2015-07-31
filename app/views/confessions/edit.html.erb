@@ -1,6 +1,39 @@
+<div class="row">
+<div class='col-sm-7 col-sm-offset-2 confessionform'>
+<%= form_for @confession, {class: "form-horizontal"} do |f| %>
 
-<h1>Edit confession</h1><hr></hr>
+<% if @confession.errors.any? %>
+<div id="error_explanation">
+	<h2> <%= pluralize(@confession.errors.count, "error") %> prohibited
+	this confession from being saved: </h2>
+	<ul>
+		<% @confession.errors.full_messages.each do |msg| %>
+		<li>
+			<%= msg %>
+		</li>
+		<% end %>
+	</ul>
+</div>
+<% end %>
+	<div class="form-group">
+		<label for="title" class="col-xs-3 control-label">Title</label>
+		<div class="col-xs-9">
+			<%= f.text_field :title, {class: "form-control"} %>
+		</div> 
+	</div>
 
-<%= render 'form' %>
+	<div class="form-group">
+		<label for="content" class="col-xs-3 control-label">Content</label>
+		<div class="col-xs-9">
+			<%= f.text_area :content, {class: "form-control" }%>
+		</div>
+	</div>
 
-<%= link_to 'Back' , root_path %>
+	<div class="form-group">
+		<div class="col-xs-offset-3 col-xs-9">
+			<%= f.submit 'Edit Confession', {class: "btn btn-primary col-xs-12"} %>
+		</div>
+	</div>
+	<% end %>
+		</div>
+</div>

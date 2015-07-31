@@ -1,31 +1,29 @@
 <p>
-  <strong>Title:</strong>
-  <%= @confession.title %>
-</p>
- 
-<p>
-  <strong>Content:</strong>
-  <%= @confession.content %>
+	<strong>Title:</strong>
+	<%= @confession.title %>
 </p>
 
 <p>
-  <strong>Username:</strong>
-  <%= @confession.user.username %>
+	<strong>Content:</strong>
+	<%= @confession.content %>
+</p>
+
+<p>
+	<strong>Username:</strong>
+	<%= @confession.user.username %>
 </p>
 
 <%= link_to 'Back', root_path %>
 
 <% if @confession.user_id == current_user.id %>
-	<%= link_to 'Edit', edit_confession_path(@confession) %>
-	<%= link_to 'Delete', delete_confession_path(@confession), method: :delete,
-	              data: { confirm: 'Are you sure?' } %>
-<% end %>	
+<%= link_to 'Edit', edit_confession_path(@confession) %>
+<%= link_to 'Delete', delete_confession_path(@confession), method: :delete,
+data: { confirm: 'Are you sure?' } %>
+<% end %>
 
 <h2>Comments</h2>
 <%= render @confession.comments %>
 
-
-  <h2>Add a comment: </h2>
-  <%= render 'comments/form' %>
-
+<h2>Add a comment: </h2>
+<%= render 'comments/form' %>
 

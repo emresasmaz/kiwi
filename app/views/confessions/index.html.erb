@@ -1,26 +1,68 @@
-<% @confessions.each do |confession| %>
-	
-	<dl class="dl-horizontal">
-		<dd>
-			Title: <%= confession.title %>
-		</dd>
-		<dd>
-			Content: <%= confession.content %>
-		</dd>
-	</dl>
-	<p><strong> <%= link_to 'Show', confession_path(confession) %></p> </strong>
-	
-	<% like = Like.where(:user_id => current_user.id, :confession_id => confession.id).first %>
-	
-	<% unless like %>
-	<h3><%= render partial: 'likes/like', locals: {c: confession} %></h3>
-	<%else%>
-	<h3><%= render partial: 'likes/unlike', locals: {like: like} %></h3>
-	<% end %>
-	
-	<%= confession.likes.count %> -
-	<%= confession.users.last(10).map {|u| u.username}.join(', ') %>
-	<dt>
-		<%= link_to confession.user.username, root_path(user_id: confession.user.id) %>
-	</dt>
-	<% end %>
+<div class="container">
+	<div class="jumbotron">
+		<% @confessions.each do |confession| %>
+
+		<dl class="dl-horizontal">
+			<dd>
+				<div class="col-xs-offset-0 col-xs-6">
+					<div class="common">
+						<label for="title" class="col-xs-3 control-label">Title: </label>
+
+						<div class="col-xs-9">
+							<%= confession.title %>
+						</div>
+					</div>
+				</div>
+			</dd>
+			<dd>
+				<div class="col-xs-offset-0 col-xs-6">
+					<div class="common">
+						<label for="content" class="col-xs-3 control-label">Content: </label>
+						<div class="col-xs-9">
+							<%= confession.content %>
+						</div>
+					</div>
+				</div>
+			</dd>
+			<dd>
+				<div class="col-xs-offset-0 col-xs-6">
+					<div class="common">
+						<h5><label for="show" class="col-xs-offset-0 col-xs-4 control-label">Click for details: </label><h5>
+						<p>
+							<strong> <%= link_to 'Show', confession_path(confession) %>
+						</p> </strong>
+					</div>
+				</div>
+			</dd>
+
+			<dd>
+				<div class="col-xs-offset-0 col-xs-6">
+					<div class="common">
+						<% like = Like.where(:user_id => current_user.id, :confession_id => confession.id).first %>
+						<% unless like %>
+						<h5><%= render partial: 'likes/like', locals: {c: confession} %></h5>
+						<%else%>
+						<h5><%= render partial: 'likes/unlike', locals: {like: like} %></h5>
+						<% end %>
+					</div>
+				</div>
+			</dd>
+
+			<dd>
+				<div class="col-xs-offset-0 col-xs-6">
+					<div class="common">
+						<%= confession.likes.count %> -
+						<%= confession.users.last(10).map {|u| u.username}.join(', ') %>
+					</div>
+				</div>
+			</dd>
+		</dl>
+
+		<dt>
+			<p class="text-center">
+				<%= link_to confession.user.username, root_path(user_id: confession.user.id) %>
+			</p>
+		</dt>
+		<% end %>
+	</div>
+</div>
