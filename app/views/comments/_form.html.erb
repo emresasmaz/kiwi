@@ -1,9 +1,18 @@
-<%= form_for([@confession, @confession.comments.build]) do |f| %>
-  <p>
-    <%= f.label :body %><br>
-    <%= f.text_area :body %>
-  </p>
-  <p>
-    <%= f.submit %>
-  </p>
-<% end %>
+<div class="row">
+	<div class='col-sm-7 col-sm-offset-1 commentform'>
+		<%= form_for([@confession, @confession.comments.build]) do |f| %>
+		<div class="form-group">
+			<label for="body" class="col-xs-3 control-label"></label>
+			<div class="col-xs-9">
+				<%= f.text_area :body, {class: "form-control" }%>
+			</div>
+		</div>
+        <div class="form-group">
+			<div class="col-xs-offset-3 col-xs-9">
+				<%= f.submit 'Add a Comment', {class: "btn btn-primary col-xs-12"} %>
+			</div>
+		</div>
+		<% end %>
+	</div>
+</div>
+

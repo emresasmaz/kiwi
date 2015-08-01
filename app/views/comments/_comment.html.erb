@@ -1,16 +1,16 @@
-
-<p>
-  <strong>Commenter:</strong>
-  <%= comment.user.username %>
-</p>
-
-<p>
-  <strong>Comment:</strong>
-  <%= comment.body %>
-</p>
-
-<p>
-  <%= link_to 'Delete', [comment.confession, comment],
+<div class="row">
+	<dl class="dl-horizontal confession">
+		<dt>Commenter:</dt>
+		<dd><%= comment.user.username %></dd>
+		
+		<dt>Comment:</dt>
+		<dd><%= comment.body %></dd>
+		
+		<dd><%= link_to 'Delete', [comment.confession, comment],
                method: :delete,
-               data: { confirm: 'Are you sure?' } %>
-</p>
+               data: { confirm: 'Are you sure?' } %></dd>
+	</dl>
+</div>
+			
+		
+

@@ -11,7 +11,6 @@ body.controller--confessions.action--index {
 }
 
 body.controller--confessions.action--new,
-body.controller--confessions.action--show,
 body.controller--confessions.action--edit,
 body.controller--confessions.action--create,
 body.controller--confessions.action--update {
@@ -23,4 +22,21 @@ background-image: url("http://hdw.datawallpaper.com/architecture/golden-gate-bri
       font-size: 20px;
       color: blue;
     }
+}
+body.controller--confessions.action--show {
+  background-image: url("http://hdw.datawallpaper.com/architecture/golden-gate-bridge-from-a-wharf-hdr-wide-wallpaper-500732.jpg");
+    .confessionform{
+       margin-top: 180px; 
+    }
+    .form-group{
+      font-size: 20px;
+      color: blue;
+    }
+      .confession {
+    background-color: #eee;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    padding: 10px;
+  }
 }

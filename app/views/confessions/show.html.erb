@@ -1,29 +1,47 @@
-<p>
-	<strong>Title:</strong>
-	<%= @confession.title %>
-</p>
+<div class="row">
+	<dl class="dl-horizontal confession">
+		<dt>
+			Title:
+		</dt>
+		<dd>
+			<%= @confession.title %>
+		</dd>
 
-<p>
-	<strong>Content:</strong>
-	<%= @confession.content %>
-</p>
+		<dt>
+			Content:
+		</dt>
+		<dd>
+			<%= @confession.content %>
+		</dd>
 
-<p>
-	<strong>Username:</strong>
-	<%= @confession.user.username %>
-</p>
+		<dt>
+			Username:
+		</dt>
+		<dd>
+			<%= @confession.user.username %>
+		</dd>
 
-<%= link_to 'Back', root_path %>
+		<dd>
+			<%= link_to 'Back', root_path %>
+			<% if @confession.user_id == current_user.id %>
+			<%= link_to 'Edit', edit_confession_path(@confession) %>
+			<%= link_to 'Delete', delete_confession_path(@confession), method: :delete,
+			data: { confirm: 'Are you sure?' } %>
+			<% end %>
+		</dd>
+	</dl>
+</div>
+<%= render @confession.comments%>
+		<%= render 'comments/form' %>
 
-<% if @confession.user_id == current_user.id %>
-<%= link_to 'Edit', edit_confession_path(@confession) %>
-<%= link_to 'Delete', delete_confession_path(@confession), method: :delete,
-data: { confirm: 'Are you sure?' } %>
-<% end %>
+	    
 
-<h2>Comments</h2>
-<%= render @confession.comments %>
-
-<h2>Add a comment: </h2>
-<%= render 'comments/form' %>
-
+	
+	
+	
+	
+	
+    
+    
+  
+	
