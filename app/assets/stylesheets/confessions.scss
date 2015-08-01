@@ -1,10 +1,15 @@
 body.controller--confessions.action--index {
- background-color: gray;
-  .common{
-    margin-left: -180px;
+  background-image: url("http://img1.findthebest.com/sites/default/files/2307/media/images/Light_Gray_429810_i0.png");
+  
+  .confession {
+    background-color: #eee;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    padding: 10px;
   }
+}
 
-  }
 body.controller--confessions.action--new,
 body.controller--confessions.action--show,
 body.controller--confessions.action--edit,

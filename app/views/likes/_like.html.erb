@@ -1,6 +1,6 @@
 <%= form_tag likes_path do %>
   <%= hidden_field_tag :confession_id, c.id %>
-  <%= submit_tag 'Like'  %>
+  <%= submit_tag 'Like', class: 'btn btn-primary col-xs-1'  %>
 <% end %>
 
 

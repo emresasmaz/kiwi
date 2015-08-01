@@ -3,11 +3,8 @@ class ConfessionsController < ApplicationController
   before_action :can_update_or_delete, only: [:edit, :update, :destroy]
   
   def index
-    if params[:user_id]
-      @confessions = Confession.where(user_id: params[:user_id].to_i)
-    else
-      @confessions = Confession.all
-    end
+    @confessions = Confession.order('created_at DESC')
+    @confessions = @confessions.where(user_id: params[:user_id].to_i) if params[:user_id]
   end
 
   def new

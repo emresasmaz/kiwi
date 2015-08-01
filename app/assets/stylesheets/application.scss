@@ -25,12 +25,12 @@ body {
 	margin: auto;
 }
 
-body > .container {
-	margin-top: 135px;
-}
-
-.container {
+.container, .container-fluid {
 	width: 960px;
 	margin: 0 auto;
+}
+
+.dl-horizontal dd {
+  word-wrap: break-word;
 }
 
